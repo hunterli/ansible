@@ -1,12 +1,5 @@
-FROM ubuntu:18.04
+FROM alpine:3.11
 
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends software-properties-common && \
-    apt-add-repository --yes --update ppa:ansible/ansible && \
-    apt-get install -y --no-install-recommends ansible
-
-RUN sed -i 's/^# alias/alias/g' /root/.bashrc
+RUN apk add --no-cache ansible openssh-client
 
 WORKDIR /playbook
-
-CMD ["/bin/bash"]
