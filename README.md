@@ -1,5 +1,5 @@
 # ansible
-Ansible Dockerfile base on Ubuntu18.04
+Ansible Dockerfile base on python:3-slim
 
 Build command:
 `docker build --rm -t ansible .`
